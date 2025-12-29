@@ -1,12 +1,8 @@
-# nvf-config
+# Usage
 
-My Neovim config
+This flake exposes a package named `default`, which wraps [`neovim`](https://github.com/NixOS/nixpkgs/tree/nixos-unstable/pkgs/applications/editors/neovim)
 
-## Usage
-
-This flake exposes a x86_64-linux package named `default`, which wraps [`neovim`](https://github.com/NixOS/nixpkgs/tree/nixos-unstable/pkgs/applications/editors/neovim)
-
-### Example configuration:
+## Example configuration:
 
 add the following to your flake inputs,
 
@@ -17,7 +13,7 @@ add the following to your flake inputs,
     };
 ```
 
-add the following to your systemPackages (or wherever you wish),
+add the following to your systemPackages (for a system-wide installation),
 
 ```nix
     nvf-config.packages.x86_64-linux.neovim
