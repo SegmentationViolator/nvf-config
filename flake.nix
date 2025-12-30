@@ -9,7 +9,7 @@
 
     outputs = {nixpkgs, nvf, utils, ...}: 
         utils.lib.eachDefaultSystem (system: {
-            packages.${system} = {
+            packages = {
                 default =
                     (nvf.lib.neovimConfiguration {
                         pkgs = nixpkgs.legacyPackages.${system};
