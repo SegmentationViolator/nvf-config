@@ -16,5 +16,5 @@ add the following to your flake inputs,
 add the following to your systemPackages (for a system-wide installation),
 
 ```nix
-    nvf-config.packages.x86_64-linux.neovim
+    nvf-config.packages.${pkgs.stdenv.hostPlatform.system}.neovim
 ```
