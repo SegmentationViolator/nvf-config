@@ -56,7 +56,7 @@
         };
 
         languages = {
-            enableExtraaDiagnostics = true;
+            enableExtraDiagnostics = true;
             enableFormat = true;
             enableTreesitter = true;
 
