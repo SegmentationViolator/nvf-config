@@ -1,13 +1,9 @@
 { pkgs, ... }:
 
-let
-    enabled = {
-        enable = true;
-    };
-in
 {
     config.vim = {
-        autocomplete.blink-cmp = enabled // {
+        autocomplete.blink-cmp = {
+            enable = true;
             setupOpts = {
                 cmdline.keymap.preset = "super-tab";
 
@@ -27,18 +23,21 @@ in
             };
         };
 
-        clipboard = enabled // {
-            providers.wl-copy = enabled;
-        };
+        binds.whichKey.enable = true;
 
-        comments.comment-nvim = enabled;
+        comments.comment-nvim.enable = true;
 
-        diagnostics = enabled // {
+        diagnostics = {
+            enable = true;
             config = {
                 signs = true;
                 virtual_text = true;
             };
         };
+
+        extraLuaFiles = [
+            ./lua/save-as-root.lua
+        ];
 
         extraPlugins = with pkgs.vimPlugins; {
             blink-pairs = {
@@ -47,37 +46,44 @@ in
             };
         };
 
-        filetree.nvimTree = enabled // {
+        filetree.nvimTree = {
+            enable = true;
             setupOpts = {
-                diagnostics = enabled;
+                diagnostics.enable = true;
                 disable_netrw = true;
                 hijack_cursor = true;
             };
         };
 
         languages = {
+            enableExtraaDiagnostics = true;
+            enableFormat = true;
             enableTreesitter = true;
 
-            assembly = enabled;
-            clang = enabled;
-            css = enabled;
-            html = enabled;
-            java = enabled;
-            markdown = enabled;
-            nix = enabled;
-            python = enabled;
-            rust = enabled // {
-                extensions.crates-nvim = enabled;
+            assembly.enable = true;
+            clang.enable = true;
+            css.enable = true;
+            html.enable = true;
+            java.enable = true;
+            markdown.enable = true;
+            nix.enable = true;
+            python.enable = true;
+
+            rust = {
+                enable = true;
+                extensions.crates-nvim.enable = true;
             };
-            tailwind = enabled;
-            ts = enabled;
-            typst = enabled;
+
+            tailwind.enable = true;
+            ts.enable = true;
+            typst.enable = true;
         };
 
         lineNumberMode = "number";
 
-        lsp = enabled // {
-            inlayHints = enabled;
+        lsp = {
+            enable = true;
+            inlayHints.enable = true;
         };
 
         options = {
@@ -88,17 +94,17 @@ in
             shiftwidth = 4;
             showmode = false;
             tabstop = 4;
-            tm = 1000;
             wrap = false;
         };
 
-        presence.neocord = enabled;
+        presence.neocord.enable = true;
 
-        preventJunkFiles = true;
+        statusline.lualine.enable = true;
 
-        statusline.lualine = enabled;
+        tabline.nvimBufferline.enable = true;
 
-        telescope = enabled // {
+        telescope = {
+            enable = true;
             extensions = [
                 {
                     name = "fzf";
@@ -112,19 +118,21 @@ in
             ];
         };
 
-        terminal.toggleterm = enabled // {
+        terminal.toggleterm = {
             setupOpts = {
                 direction = "float";
                 size = 10;
             };
         };
 
-        theme = enabled // {
+        theme = {
+            enable = true;
             name = "tokyonight";
             style = "night";
         };
 
-        ui.colorizer = enabled // {
+        ui.colorizer = {
+            enable = true;
             setupOpts.filetypes."*" = {
                 RGB = true;
                 RRGGBB = true;
@@ -133,9 +141,9 @@ in
         };
 
         visuals = {
-            fidget-nvim = enabled;
-            indent-blankline = enabled;
-            nvim-web-devicons = enabled;
+            fidget-nvim.enable = true;
+            indent-blankline.enable = true;
+            nvim-web-devicons.enable = true;
         };
     };
 }
