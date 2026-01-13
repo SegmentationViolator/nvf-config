@@ -14,16 +14,13 @@
                 ];
 
                 signature.enabled = true;
-
-                sources.default = [
-                    "lsp"
-                    "path"
-                    "buffer"
-                ];
             };
         };
 
-        binds.whichKey.enable = true;
+        clipboard = {
+            enable = true;
+            providers.wl-copy.enable = true;
+        };
 
         comments.comment-nvim.enable = true;
 
@@ -39,51 +36,102 @@
             ./lua/save-as-root.lua
         ];
 
-        extraPlugins = with pkgs.vimPlugins; {
-            blink-pairs = {
-                package = blink-pairs;
-                setup = ''require("blink.pairs").setup({})'';
-            };
-        };
-
-        filetree.nvimTree = {
-            enable = true;
-            setupOpts = {
-                diagnostics.enable = true;
-                disable_netrw = true;
-                hijack_cursor = true;
-            };
-        };
-
         languages = {
             enableExtraDiagnostics = true;
             enableFormat = true;
             enableTreesitter = true;
 
-            assembly.enable = true;
-            clang.enable = true;
-            css.enable = true;
-            html.enable = true;
-            java.enable = true;
-            markdown.enable = true;
-            nix.enable = true;
-            python.enable = true;
+            assembly = {
+                enable = true;
+                lsp.enable = true;
+            };
+
+            clang = {
+                enable = true;
+                lsp.enable = true;
+            };
+
+            css = {
+                enable = true;
+                lsp.enable = true;
+            };
+
+            html = {
+                enable = true;
+                lsp.enable = true;
+            };
+
+            java = {
+                enable = true;
+                lsp.enable = true;
+            };
+
+            json.enable = true;
+
+            kotlin = {
+                enable = true;
+                lsp.enable = true;
+            };
+
+            markdown = {
+                enable = true;
+                extensions.markview-nvim.enable = true;
+            };
+
+            nix = {
+                enable = true;
+                lsp = {
+                    enable = true;
+                    servers = [ "nixd" ];
+                };
+            };
+
+            python = {
+                enable = true;
+                format.type = [ "isort" "ruff" ];
+                lsp.enable = true;
+            };
 
             rust = {
                 enable = true;
                 extensions.crates-nvim.enable = true;
+                lsp.enable = true;
             };
 
-            tailwind.enable = true;
-            ts.enable = true;
-            typst.enable = true;
+            tailwind = {
+                enable = true;
+                lsp.enable = true;
+            };
+
+            ts = {
+                enable = true;
+                lsp.enable = true;
+            };
+
+            typst = {
+                enable = true;
+                extensions.typst-preview-nvim.enable = true;
+                lsp.enable = true;
+            };
+
+            wgsl.enable = true;
+
+            yaml.enable = true;
+        };
+
+        lazy.plugins = {
+            "blink.pairs" = {
+                package = pkgs.vimPlugins.blink-pairs;
+            };
         };
 
         lineNumberMode = "number";
 
         lsp = {
-            enable = true;
             inlayHints.enable = true;
+            lightbulb.enable = true;
+            lspkind.enable = true;
+            lspSignature.enable = true;
         };
 
         options = {
@@ -101,8 +149,6 @@
 
         statusline.lualine.enable = true;
 
-        tabline.nvimBufferline.enable = true;
-
         telescope = {
             enable = true;
             extensions = [
@@ -119,6 +165,7 @@
         };
 
         terminal.toggleterm = {
+            enable = true;
             setupOpts = {
                 direction = "float";
                 size = 10;
@@ -131,13 +178,24 @@
             style = "night";
         };
 
-        ui.colorizer = {
-            enable = true;
-            setupOpts.filetypes."*" = {
-                RGB = true;
-                RRGGBB = true;
-                RRGGBBAA = true;
+        ui = {
+            colorful-menu-nvim.enable = true;
+
+            colorizer = {
+                enable = true;
+                setupOpts.filetypes."*" = {
+                    RGB = true;
+                    RRGGBB = true;
+                    RRGGBBAA = true;
+                };
             };
+
+            fastaction.enable = true;
+        };
+
+        utility = {
+            direnv.enable = true;
+            multicursors.enable = true;
         };
 
         visuals = {
