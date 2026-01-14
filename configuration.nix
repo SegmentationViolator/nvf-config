@@ -4,6 +4,8 @@
     config.vim = {
         autocomplete.blink-cmp = {
             enable = true;
+            mappings.next = "Down";
+            mappings.previous = "Up";
             setupOpts = {
                 cmdline.keymap.preset = "super-tab";
 
@@ -61,17 +63,7 @@
                 lsp.enable = true;
             };
 
-            java = {
-                enable = true;
-                lsp.enable = true;
-            };
-
             json.enable = true;
-
-            kotlin = {
-                enable = true;
-                lsp.enable = true;
-            };
 
             markdown = {
                 enable = true;
@@ -142,10 +134,8 @@
             shiftwidth = 4;
             showmode = false;
             tabstop = 4;
-            wrap = false;
+            wrap = true;
         };
-
-        presence.neocord.enable = true;
 
         statusline.lualine.enable = true;
 
