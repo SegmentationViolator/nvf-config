@@ -4,8 +4,6 @@
     config.vim = {
         autocomplete.blink-cmp = {
             enable = true;
-            mappings.next = "Down";
-            mappings.previous = "Up";
             setupOpts = {
                 cmdline.keymap.preset = "super-tab";
 
