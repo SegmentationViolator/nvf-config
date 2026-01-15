@@ -140,6 +140,7 @@
         lazy.plugins = {
             "blink.pairs" = {
                 package = pkgs.vimPlugins.blink-pairs;
+                setupModule = "blink.pairs";
             };
         };
 
