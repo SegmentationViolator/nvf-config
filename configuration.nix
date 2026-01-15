@@ -17,6 +17,11 @@
             };
         };
 
+        binds.whichKey = {
+            enable = true;
+            setupOpts.preset = "helix";
+        };
+
         clipboard = {
             enable = true;
             providers.wl-copy.enable = true;
@@ -35,6 +40,19 @@
         extraLuaFiles = [
             ./lua/save-as-root.lua
         ];
+
+        filetree.nvimTree = {
+            enable = true;
+            mappings.toggle = " tt";
+
+            setupOpts = {
+                actions.open_file.resize_window = true;
+                diagnostics.enable = true;
+                disable_netrw = true;
+                git.enable = true;
+                hijack_cursor = true;
+            };
+        };
 
         languages = {
             enableExtraDiagnostics = true;
@@ -148,6 +166,11 @@
         presence.neocord.enable = true;
 
         statusline.lualine.enable = true;
+
+        tabline.nvimBufferline = {
+            enable = true;
+            setupOpts.options.numbers = "none";
+        };
 
         telescope = {
             enable = true;
