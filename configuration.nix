@@ -100,10 +100,6 @@
                 extensions.crates-nvim.enable = true;
             };
 
-            go = {
-                enable = true;
-            };
-
             ts = {
                 enable = true;
             };
