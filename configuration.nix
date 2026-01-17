@@ -106,7 +106,7 @@
                 lsp.enable = true;
             };
 
-            go = {
+            golang = {
                 enable = true;
                 lsp.enable = true;
             };
