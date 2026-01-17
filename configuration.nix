@@ -106,6 +106,11 @@
                 lsp.enable = true;
             };
 
+            go = {
+                enable = true;
+                lsp.enable = true;
+            };
+
             tailwind = {
                 enable = true;
                 lsp.enable = true;
