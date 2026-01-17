@@ -61,7 +61,6 @@
 
             assembly = {
                 enable = true;
-                lsp.enable = true;
             };
 
             clang = {
@@ -71,12 +70,10 @@
 
             css = {
                 enable = true;
-                lsp.enable = true;
             };
 
             html = {
                 enable = true;
-                lsp.enable = true;
             };
 
             json.enable = true;
@@ -89,7 +86,6 @@
             nix = {
                 enable = true;
                 lsp = {
-                    enable = true;
                     servers = [ "nixd" ];
                 };
             };
@@ -97,34 +93,24 @@
             python = {
                 enable = true;
                 format.type = [ "isort" "ruff" ];
-                lsp.enable = true;
             };
 
             rust = {
                 enable = true;
                 extensions.crates-nvim.enable = true;
-                lsp.enable = true;
             };
 
-            golang = {
+            go = {
                 enable = true;
-                lsp.enable = true;
-            };
-
-            tailwind = {
-                enable = true;
-                lsp.enable = true;
             };
 
             ts = {
                 enable = true;
-                lsp.enable = true;
             };
 
             typst = {
                 enable = true;
                 extensions.typst-preview-nvim.enable = true;
-                lsp.enable = true;
             };
 
             wgsl.enable = true;
