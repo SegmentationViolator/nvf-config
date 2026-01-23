@@ -2,6 +2,7 @@
 
 {
     config.vim = {
+        utility.images.image-nvim.enable = true;
         autocomplete.blink-cmp = {
             enable = true;
             setupOpts = {
