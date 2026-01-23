@@ -6,7 +6,7 @@
             enable = true;
             setupOpts.backend = "kitty";
         #   setupOpts.editorOnlyRenderWhenFocused = true;
-        }
+        };
         autocomplete.blink-cmp = {
             enable = true;
             setupOpts = {
