@@ -4,8 +4,6 @@
     config.vim = {
         utility.images.image-nvim = {
             enable = true;
-            setupOpts.backend = "sixel";
-        #   setupOpts.editorOnlyRenderWhenFocused = true;
         };
         autocomplete.blink-cmp = {
             enable = true;
