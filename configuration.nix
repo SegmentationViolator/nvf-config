@@ -4,7 +4,7 @@
     config.vim = {
         utility.images.image-nvim = {
             enable = true;
-            setupOpts.backend = "sixel";
+            setupOpts.backend = "kitty";
         };
         autocomplete.blink-cmp = {
             enable = true;
