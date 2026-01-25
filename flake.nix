@@ -3,13 +3,22 @@
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-        nvf.url = "github:notashelf/nvf";
-        utils.url = "github:numtide/flake-utils";
+
+        nvf = {
+            url = "github:notashelf/nvf";
+            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.systems.follows = "systems";
+        };
+
+        systems.url = "github:nix-systems/default";
     };
 
-    outputs = {nixpkgs, nvf, utils, ...}: 
-        utils.lib.eachDefaultSystem (system: {
-            packages = {
+    outputs = {nixpkgs, nvf, systems, ...}:
+        let
+            eachSystem = nixpkgs.lib.genAttrs (import systems);
+        in
+        {
+            packages = eachSystem (system: {
                 default =
                     (nvf.lib.neovimConfiguration {
                         pkgs = nixpkgs.legacyPackages.${system};
@@ -17,6 +26,6 @@
                             ./configuration.nix
                         ];
                     }).neovim;
-            };
-        });
+            });
+        };
 }
