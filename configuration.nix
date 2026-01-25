@@ -2,10 +2,6 @@
 
 {
     config.vim = {
-        utility.images.image-nvim = {
-            enable = true;
-            setupOpts.backend = "kitty";
-        };
         autocomplete.blink-cmp = {
             enable = true;
             setupOpts = {
@@ -201,6 +197,12 @@
 
         utility = {
             direnv.enable = true;
+
+            images.image-nvim = {
+                enable = true;
+                setupOpts.backend = "kitty";
+            };
+
             multicursors.enable = true;
         };
 
