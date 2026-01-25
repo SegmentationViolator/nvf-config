@@ -63,35 +63,32 @@
             enableFormat = true;
             enableTreesitter = true;
 
-            assembly = {
+            assembly.enable = true;
+
+            clang.enable = true;
+
+            css.enable = true;
+
+            html.enable = true;
+
+            java.enable = true;
+
+            json = {
                 enable = true;
+                lsp.enable = false;
             };
 
-            clang = {
-                enable = true;
-                lsp.enable = true;
-            };
-
-            css = {
-                enable = true;
-            };
-
-            html = {
-                enable = true;
-            };
-
-            json.enable = true;
+            kotlin.enable = true;
 
             markdown = {
                 enable = true;
                 extensions.markview-nvim.enable = true;
+                lsp.enable = false;
             };
 
             nix = {
                 enable = true;
-                lsp = {
-                    servers = [ "nixd" ];
-                };
+                lsp.servers = [ "nixd" ];
             };
 
             python = {
@@ -104,18 +101,24 @@
                 extensions.crates-nvim.enable = true;
             };
 
-            ts = {
-                enable = true;
-            };
+            tailwind.enable = true;
+
+            ts.enable = true;
 
             typst = {
                 enable = true;
                 extensions.typst-preview-nvim.enable = true;
             };
 
-            wgsl.enable = true;
+            wgsl = {
+                enable = true;
+                lsp.enable = false;
+            };
 
-            yaml.enable = true;
+            yaml = {
+                enable = true;
+                lsp.enable = false;
+            };
         };
 
         lazy.plugins = {
@@ -128,10 +131,10 @@
         lineNumberMode = "number";
 
         lsp = {
+            enable = true;
             inlayHints.enable = true;
             lightbulb.enable = true;
             lspkind.enable = true;
-            lspSignature.enable = true;
         };
 
         options = {
