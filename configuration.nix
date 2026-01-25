@@ -141,7 +141,7 @@
             shiftwidth = 4;
             showmode = false;
             tabstop = 4;
-            wrap = true;
+            wrap = false;
         };
 
         statusline.lualine.enable = true;
