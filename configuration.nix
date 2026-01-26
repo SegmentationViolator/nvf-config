@@ -152,6 +152,8 @@
             wrap = false;
         };
 
+        presence.neocord.enable = true;
+
         statusline.lualine.enable = true;
 
         tabline.nvimBufferline = {
