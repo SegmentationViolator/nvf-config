@@ -41,6 +41,10 @@
             ./lua/save-as-root.lua
         ];
 
+        extraPackages = with pkgs; [
+            imagemagick
+        ];
+
         filetree.nvimTree = {
             enable = true;
             mappings.toggle = " tt";
@@ -133,6 +137,10 @@
             lspkind.enable = true;
         };
 
+        luaPackages = [
+            "magick"
+        ];
+
         options = {
             background = "dark";
             cursorline = true;
@@ -200,7 +208,10 @@
 
             images.image-nvim = {
                 enable = true;
-                setupOpts.backend = "kitty";
+                setupOpts = {
+                    backend = "kitty";
+                    processor = "magick_rock";
+                };
             };
 
             multicursors.enable = true;

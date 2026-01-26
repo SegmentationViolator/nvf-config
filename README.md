@@ -2,7 +2,7 @@
 
 This flake exposes a package named `default`, which wraps neovim
 
-## Example configuration:
+## Example configuration
 
 add the following to your flake inputs,
 
