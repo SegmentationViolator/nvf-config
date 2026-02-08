@@ -2,11 +2,7 @@
 
 {
     config.vim = {
-        utility.images.image-nvim = {
-            enable = true;
-            setupOpts.backend = "kitty";
-        };
-        autocomplete.blink-cmp = {
+       autocomplete.blink-cmp = {
             enable = true;
             setupOpts = {
                 cmdline.keymap.preset = "super-tab";
@@ -137,6 +133,10 @@
             lspkind.enable = true;
         };
 
+        luaPackages = [
+        "magick"
+        ]
+
         options = {
             background = "dark";
             cursorline = true;
@@ -201,6 +201,13 @@
 
         utility = {
             direnv.enable = true;
+            images.image-nvim = {
+                   enable = true;
+                setupOpts = {
+                    backend = "kitty";
+                    processor = "magick_rock";
+                };
+            };
             multicursors.enable = true;
         };
 
