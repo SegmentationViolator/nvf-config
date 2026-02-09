@@ -135,7 +135,7 @@
 
         luaPackages = [
         "magick"
-        ]
+        ];
 
         options = {
             background = "dark";
