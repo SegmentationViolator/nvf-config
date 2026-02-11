@@ -2,8 +2,6 @@
 
 {
     config.vim = {
-        assistant.copilot.enable = true;
-
         autocomplete.blink-cmp = {
             enable = true;
             setupOpts = {
