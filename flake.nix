@@ -10,8 +10,11 @@
 
         nvf = {
             url = "github:notashelf/nvf";
-            inputs.nixpkgs.follows = "nixpkgs";
-            inputs.systems.follows = "systems";
+            inputs = {
+                flake-parts.follows = "flake-parts";
+                nixpkgs.follows = "nixpkgs";
+                systems.follows = "systems";
+            };
         };
 
         systems.url = "github:nix-systems/x86_64-linux";
