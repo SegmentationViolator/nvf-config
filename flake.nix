@@ -22,7 +22,7 @@
 
     outputs = { flake-parts, import-tree, systems,... } @ inputs:
         flake-parts.lib.mkFlake { inherit inputs; } {
-            inherit (import systems) systems;
+            systems = import systems;
             imports = import-tree ./modules;
         };
 }
