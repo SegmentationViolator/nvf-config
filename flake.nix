@@ -20,9 +20,6 @@
         systems.url = "github:nix-systems/default";
     };
 
-    outputs = { flake-parts, import-tree, systems,... } @ inputs:
-        flake-parts.lib.mkFlake { inherit inputs; } {
-            systems = import systems;
-            imports = import-tree ./modules;
-        };
+    outputs = { flake-parts, import-tree, ... } @ inputs:
+        flake-parts.lib.mkFlake { inherit inputs; } (import-tree ./modules);
 }
