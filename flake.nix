@@ -2,6 +2,10 @@
     description = "nvf configuration";
 
     inputs = {
+        flake-parts.url = "github:hercules-ci/flake-parts";
+
+        import-tree.url = "github:vic/import-tree";
+
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
         nvf = {
@@ -10,22 +14,12 @@
             inputs.systems.follows = "systems";
         };
 
-        systems.url = "github:nix-systems/default";
+        systems.url = "github:nix-systems/x86_64-linux";
     };
 
-    outputs = {nixpkgs, nvf, systems, ...}:
-        let
-            eachSystem = nixpkgs.lib.genAttrs (import systems);
-        in
-        {
-            packages = eachSystem (system: {
-                default =
-                    (nvf.lib.neovimConfiguration {
-                        pkgs = nixpkgs.legacyPackages.${system};
-                        modules = [
-                            ./configuration.nix
-                        ];
-                    }).neovim;
-            });
+    outputs = { flake-parts, systems, ... } @ inputs:
+        flake-parts.lib.mkFlake { inherit inputs; } {
+            inherit (import systems) systems;
+            imports = [ ./modules ];
         };
 }
