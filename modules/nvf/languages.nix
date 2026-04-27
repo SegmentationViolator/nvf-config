@@ -44,9 +44,7 @@ _: {
                     extensions.crates-nvim.enable = true;
                 };
 
-                tailwind.enable = true;
-
-                ts.enable = true;
+                typescript.enable = true;
 
                 typst = {
                     enable = true;

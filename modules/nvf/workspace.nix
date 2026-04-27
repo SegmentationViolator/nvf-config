@@ -29,6 +29,7 @@ _: {
                 inlayHints.enable = true;
                 lightbulb.enable = true;
                 lspkind.enable = true;
+                presets.tailwindcss-language-server.enable = true;
             };
         };
     };
