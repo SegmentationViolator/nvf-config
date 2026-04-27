@@ -17,7 +17,7 @@
             };
         };
 
-        systems.url = "github:nix-systems/x86_64-linux";
+        systems.url = "github:nix-systems/default";
     };
 
     outputs = { flake-parts, systems, ... } @ inputs:
