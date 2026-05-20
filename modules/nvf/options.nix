@@ -9,7 +9,7 @@ _: {
                 shiftwidth = 4;
                 showmode = false;
                 tabstop = 4;
-                wrap = false;
+                wrap = true;
             };
 
             lineNumberMode = "number";
