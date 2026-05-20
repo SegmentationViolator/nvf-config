@@ -14,14 +14,10 @@ _: {
 
                 html.enable = true;
 
-                java.enable = true;
-
                 json = {
                     enable = true;
                     lsp.enable = false;
                 };
-
-                kotlin.enable = true;
 
                 markdown = {
                     enable = true;
@@ -45,6 +41,7 @@ _: {
                 };
 
                 typescript.enable = true;
+                astro.enable = true;
 
                 typst = {
                     enable = true;
