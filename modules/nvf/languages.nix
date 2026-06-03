@@ -1,5 +1,5 @@
 _: {
-    flake.nvfModules.default = _: {
+    flake.modules.nvf.default = _: {
         config.vim = {
             languages = {
                 enableExtraDiagnostics = true;

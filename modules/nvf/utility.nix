@@ -1,5 +1,5 @@
 _: {
-    flake.nvfModules.default = _: {
+    flake.modules.nvf.default = _: {
         config.vim = {
             presence.neocord.enable = true;
             ui.fastaction.enable = true;
