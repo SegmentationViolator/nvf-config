@@ -12,10 +12,7 @@ _: {
                 };
             };
 
-            utility = {
-                direnv.enable = true;
-                multicursors.enable = true;
-            };
+            utility.direnv.enable = true;
         };
     };
 }

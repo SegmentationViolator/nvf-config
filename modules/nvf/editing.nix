@@ -1,5 +1,5 @@
 _: {
-    flake.modules.nvf.default = _: {
+    flake.modules.nvf.default = { pkgs, ... }: {
         config.vim = {
             clipboard = {
                 enable = true;
@@ -7,6 +7,20 @@ _: {
             };
 
             comments.comment-nvim.enable = true;
+
+            lazy.plugins = {
+                "autolist.nvim" = {
+                    package = pkgs.vimPlugins.autolist-nvim;
+                    setupModule = "autolist";
+                    ft = "markdown";
+                };
+
+                "blink.pairs" = {
+                    package = pkgs.vimPlugins.blink-pairs;
+                    setupModule = "blink.pairs";
+                };
+            };
+
             utility.multicursors.enable = true;
         };
     };

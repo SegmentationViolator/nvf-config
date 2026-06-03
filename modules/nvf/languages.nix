@@ -7,11 +7,8 @@ _: {
                 enableTreesitter = true;
 
                 assembly.enable = true;
-
                 clang.enable = true;
-
                 css.enable = true;
-
                 html.enable = true;
 
                 json = {
@@ -49,11 +46,6 @@ _: {
                 };
 
                 wgsl = {
-                    enable = true;
-                    lsp.enable = false;
-                };
-
-                yaml = {
                     enable = true;
                     lsp.enable = false;
                 };
