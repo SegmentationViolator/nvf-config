@@ -9,7 +9,7 @@ _: {
             comments.comment-nvim.enable = true;
 
             lazy.plugins = {
-                "autolist" = {
+                "autolist.nvim" = {
                     package = pkgs.vimPlugins.autolist-nvim;
                     setupModule = "autolist";
                     ft = "markdown";
