@@ -1,5 +1,5 @@
 _: {
-    flake.modules.nvf.default = _: {
+    flake.nvfModules.default = _: {
         config.vim = {
             languages = {
                 enableExtraDiagnostics = true;
@@ -7,13 +7,9 @@ _: {
                 enableTreesitter = true;
 
                 assembly.enable = true;
-
                 clang.enable = true;
-
                 css.enable = true;
-
                 html.enable = true;
-
                 java.enable = true;
 
                 json = {
@@ -52,11 +48,6 @@ _: {
                 };
 
                 wgsl = {
-                    enable = true;
-                    lsp.enable = false;
-                };
-
-                yaml = {
                     enable = true;
                     lsp.enable = false;
                 };

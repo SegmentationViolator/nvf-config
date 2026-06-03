@@ -1,5 +1,5 @@
 _: {
-    flake.modules.nvf.default = _: {
+    flake.nvfModules.default = _: {
         config.vim = {
             presence.neocord.enable = true;
             ui.fastaction.enable = true;
@@ -12,10 +12,7 @@ _: {
                 };
             };
 
-            utility = {
-                direnv.enable = true;
-                multicursors.enable = true;
-            };
+            utility.direnv.enable = true;
         };
     };
 }

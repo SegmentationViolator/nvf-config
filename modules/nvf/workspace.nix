@@ -1,5 +1,5 @@
 _: {
-    flake.modules.nvf.default = _: {
+    flake.nvfModules.default = _: {
         config.vim = {
             autocomplete.blink-cmp = {
                 enable = true;

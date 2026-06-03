@@ -1,5 +1,5 @@
 _: {
-    flake.modules.nvf.default = { pkgs, ... }: {
+    flake.nvfModules.default = { pkgs, ... }: {
         config.vim = {
             extraPackages = with pkgs; [
                 imagemagick

@@ -1,5 +1,5 @@
 _: {
-    flake.modules.nvf.default = _: {
+    flake.nvfModules.default = _: {
         config.vim = {
             options = {
                 background = "dark";
